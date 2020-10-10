@@ -1,0 +1,2 @@
+F:\C++Pro\TestSRL\Debug\TestSRL.exe
+F:\C++Pro\TestSRL\Debug\TestSRL.pdb
