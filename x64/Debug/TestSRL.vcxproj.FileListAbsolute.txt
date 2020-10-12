@@ -1,0 +1,2 @@
+E:\C++工程\TestDelegate\TestDelegate\x64\Debug\TestSRL.exe
+E:\C++工程\TestDelegate\TestDelegate\x64\Debug\TestSRL.pdb

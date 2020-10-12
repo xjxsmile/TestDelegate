@@ -9,76 +9,76 @@
 #include <functional>
 
 using namespace std;
-
-int g_constructCount = 0;
-int g_copyConstructCount = 0;
-int g_destructCount = 0;
-
-class STLtest
-{
-public:
-	STLtest(){
-		cout<< "STLtest无参："<<++g_constructCount<<endl;
-	}
-
-	STLtest(const STLtest& a) {
-		cout << "STLtest有参：" << ++g_copyConstructCount << endl;
-	}
-
-	~STLtest(){
-		cout<< "STLtest析构："<<++g_destructCount<<endl;
-	}
-
-	void testA(int & a){
-		cout<< "testA  &"<<endl;
-	}
-	void testA(int && a) {
-		cout << "testA  &&" << endl;
-	}
-};
-
-STLtest getSTLtest(){
-	return STLtest();
-}
-
-/************使用C++模拟ue4的代理***********/
-
-
-struct A
-{
-	A() {
-		cout << "construct: " << ++g_constructCount << endl;
-	}
-
-	A(const A& a)
-	{
-		cout << "copy construct: " << ++g_copyConstructCount << endl;
-	}
-	~A()
-	{
-		cout << "destruct: " << ++g_destructCount << endl;
-	}
-};
-
-A GetA()
-{
-	return A();
-}
-
-static int testright(int && a) {
-	return a++;
-}
-
-
-template <typename T>
-void foo(const T & container) {
-	typename T::iterator c; //未加typename, 报错
-	//++iter;
-	//int value = *iter;
-	//std::cout << value;
-
-
-}
+//
+//int g_constructCount = 0;
+//int g_copyConstructCount = 0;
+//int g_destructCount = 0;
+//
+//class STLtest
+//{
+//public:
+//	STLtest(){
+//		cout<< "STLtest无参："<<++g_constructCount<<endl;
+//	}
+//
+//	STLtest(const STLtest& a) {
+//		cout << "STLtest有参：" << ++g_copyConstructCount << endl;
+//	}
+//
+//	~STLtest(){
+//		cout<< "STLtest析构："<<++g_destructCount<<endl;
+//	}
+//
+//	void testA(int & a){
+//		cout<< "testA  &"<<endl;
+//	}
+//	void testA(int && a) {
+//		cout << "testA  &&" << endl;
+//	}
+//};
+//
+//STLtest getSTLtest(){
+//	return STLtest();
+//}
+//
+///************使用C++模拟ue4的代理***********/
+//
+//
+//struct A
+//{
+//	A() {
+//		cout << "construct: " << ++g_constructCount << endl;
+//	}
+//
+//	A(const A& a)
+//	{
+//		cout << "copy construct: " << ++g_copyConstructCount << endl;
+//	}
+//	~A()
+//	{
+//		cout << "destruct: " << ++g_destructCount << endl;
+//	}
+//};
+//
+//A GetA()
+//{
+//	return A();
+//}
+//
+//static int testright(int && a) {
+//	return a++;
+//}
+//
+//
+//template <typename T>
+//void foo(const T & container) {
+//	typename T::iterator c; //未加typename, 报错
+//	//++iter;
+//	//int value = *iter;
+//	//std::cout << value;
+//
+//
+//}
 
 int mainSTL(){
 
